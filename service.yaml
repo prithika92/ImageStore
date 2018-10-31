@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: image-store
+  labels:
+    name: image-store
+spec:
+  ports:
+  - port: 8080
+    name: http-port
+  selector:
+    app: image-store-app
+  type: NodePort
