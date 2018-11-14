@@ -14,3 +14,10 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
+        volumeMounts:
+          - mountPath: /data/
+            name: image-store-app
+      volumes: 
+         - name: image-store-app
+           persistentVolumeClaim:
+             claimName: test-claim
